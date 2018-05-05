@@ -10,7 +10,15 @@ public class CrossContainerIteration {
       System.out.print(p.id() + ":" + p + " ");
     }
     System.out.println();
-  }	
+  }
+
+  public static void printCollection(Collection collection) {
+    Iterator iterator = collection.iterator();
+    while(iterator.hasNext()) {
+      System.out.print(iterator.next().toString());
+    }
+  }
+
   public static void main(String[] args) {
     ArrayList<Pet> pets = Pets.arrayList(8);
     LinkedList<Pet> petsLL = new LinkedList<Pet>(pets);
@@ -20,6 +28,7 @@ public class CrossContainerIteration {
     display(petsLL.iterator());
     display(petsHS.iterator());
     display(petsTS.iterator());
+    printCollection(pets);
   }
 } /* Output:
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx

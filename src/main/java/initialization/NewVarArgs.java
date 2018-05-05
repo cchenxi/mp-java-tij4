@@ -15,6 +15,7 @@ public class NewVarArgs {
     printArray(47, 3.14F, 11.11);
     printArray("one", "two", "three");
     printArray(new A(), new A(), new A());
+    //指定参数的时候 编译器实际上回为你去填充数组
     // Or an array:
     printArray((Object[])new Integer[]{ 1, 2, 3, 4 });
     printArray(); // Empty list is OK

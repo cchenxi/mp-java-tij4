@@ -9,6 +9,18 @@ public class SimpleCollection {
       c.add(i); // Autoboxing
     for(Integer i : c)
       System.out.print(i + ", ");
+
+
+    Set<Integer> cc = new HashSet<Integer>();
+    for (int i = 0; i < 10; i++) {
+      cc.add(i);
+    }
+
+    for (Integer i :
+            cc) {
+      System.out.println(i + ", ");
+    }
+
   }
 } /* Output:
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
