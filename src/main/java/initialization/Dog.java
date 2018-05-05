@@ -1,10 +1,6 @@
-/**
- * Copyright (C) 2006-2018 Tuniu All rights reserved
- */
 package initialization;
 
 /**
- * TODO: description
  * Date: 2018-03-18
  *
  * @author chenxi
