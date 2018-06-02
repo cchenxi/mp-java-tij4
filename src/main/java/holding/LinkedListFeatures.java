@@ -1,35 +1,50 @@
 //: holding/LinkedListFeatures.java
 package holding; /* Added by Eclipse.py */
+
 import typeinfo.pets.*;
+
 import java.util.*;
+
 import static net.mindview.util.Print.*;
 
 public class LinkedListFeatures {
-  public static void main(String[] args) {
-    LinkedList<Pet> pets =
-      new LinkedList<Pet>(Pets.arrayList(5));
-    print(pets);
-    // Identical:
-    print("pets.getFirst(): " + pets.getFirst());
-    print("pets.element(): " + pets.element());
-    // Only differs in empty-list behavior:
-    print("pets.peek(): " + pets.peek());
-    // Identical; remove and return the first element:
-    print("pets.remove(): " + pets.remove());
-    print("pets.removeFirst(): " + pets.removeFirst());
-    // Only differs in empty-list behavior:
-    print("pets.poll(): " + pets.poll());
-    print(pets);
-    pets.addFirst(new Rat());
-    print("After addFirst(): " + pets);
-    pets.offer(Pets.randomPet());
-    print("After offer(): " + pets);
-    pets.add(Pets.randomPet());
-    print("After add(): " + pets);
-    pets.addLast(new Hamster());
-    print("After addLast(): " + pets);
-    print("pets.removeLast(): " + pets.removeLast());
-  }
+    public static void main(String[] args) {
+        LinkedList<Pet> pets =
+                new LinkedList<Pet>(Pets.arrayList(5));
+        print(pets);
+        // Identical:
+        print("pets.getFirst(): " + pets.getFirst());
+        print("pets.element(): " + pets.element());
+        // Only differs in empty-list behavior:
+        print("pets.peek(): " + pets.peek());
+        // Identical; remove and return the first element:
+        print("pets.remove(): " + pets.remove());
+        print("pets.removeFirst(): " + pets.removeFirst());
+        // Only differs in empty-list behavior:
+        print("pets.poll(): " + pets.poll());
+        print(pets);
+        pets.addFirst(new Rat());
+        print("After addFirst(): " + pets);
+        pets.offer(Pets.randomPet());
+        print("After offer(): " + pets);
+        pets.add(Pets.randomPet());
+        print("After add(): " + pets);
+        pets.addLast(new Hamster());
+        print("After addLast(): " + pets);
+        print("pets.removeLast(): " + pets.removeLast());
+
+        //创建一个空的linkedlist通过使用ListIterator。将若干个Integer插入到这个List中，插入时，总是插入到List中间
+
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        Integer[] a = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8};
+
+        for (Integer i : a) {
+            ListIterator<Integer> listIterator = linkedList.listIterator(linkedList.size() / 2);
+            listIterator.add(i);
+        }
+
+        System.out.println(linkedList);
+    }
 } /* Output:
 [Rat, Manx, Cymric, Mutt, Pug]
 pets.getFirst(): Rat
